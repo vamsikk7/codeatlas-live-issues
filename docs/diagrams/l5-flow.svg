@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 420" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <marker id="a5" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#484f58"/></marker>
+  </defs>
+  <rect width="620" height="420" rx="16" fill="#0d1117"/>
+  <text x="20" y="28" font-size="14" font-weight="700" fill="#484f58">L5 Function Flow: login()</text>
+
+  <!-- Entry -->
+  <rect x="235" y="44" width="100" height="28" rx="14" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+  <text x="285" y="63" text-anchor="middle" font-size="11" font-weight="600" fill="#c9d1d9">Entry</text>
+  <line x1="285" y1="72" x2="285" y2="88" stroke="#484f58" stroke-width="1.5" marker-end="url(#a5)"/>
+
+  <!-- Decision: valid? -->
+  <polygon points="285,92 355,120 285,148 215,120" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+  <text x="285" y="124" text-anchor="middle" font-size="10" font-weight="600" fill="#c9d1d9">valid?</text>
+
+  <!-- No -> throw 401 -->
+  <line x1="355" y1="120" x2="470" y2="120" stroke="#484f58" stroke-width="1.5" marker-end="url(#a5)"/>
+  <text x="410" y="114" text-anchor="middle" font-size="9" fill="#8b949e">No</text>
+  <rect x="475" y="106" width="110" height="28" rx="6" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+  <text x="530" y="125" text-anchor="middle" font-size="10" fill="#c9d1d9">throw 401</text>
+
+  <!-- Yes -> query database -->
+  <text x="295" y="160" font-size="9" fill="#8b949e">Yes</text>
+  <line x1="285" y1="148" x2="285" y2="170" stroke="#484f58" stroke-width="1.5" marker-end="url(#a5)"/>
+  <rect x="210" y="174" width="150" height="28" rx="6" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+  <text x="285" y="193" text-anchor="middle" font-size="10" fill="#c9d1d9">query database</text>
+  <line x1="285" y1="202" x2="285" y2="216" stroke="#484f58" stroke-width="1.5" marker-end="url(#a5)"/>
+
+  <!-- Decision: found? -->
+  <polygon points="285,220 355,248 285,276 215,248" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+  <text x="285" y="252" text-anchor="middle" font-size="10" font-weight="600" fill="#c9d1d9">found?</text>
+
+  <!-- No -> return 404 -->
+  <line x1="355" y1="248" x2="470" y2="248" stroke="#484f58" stroke-width="1.5" marker-end="url(#a5)"/>
+  <text x="410" y="242" text-anchor="middle" font-size="9" fill="#8b949e">No</text>
+  <rect x="475" y="234" width="110" height="28" rx="6" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+  <text x="530" y="253" text-anchor="middle" font-size="10" fill="#c9d1d9">return 404</text>
+
+  <!-- Yes -> try -->
+  <text x="295" y="288" font-size="9" fill="#8b949e">Yes</text>
+  <line x1="285" y1="276" x2="285" y2="296" stroke="#484f58" stroke-width="1.5" marker-end="url(#a5)"/>
+
+  <!-- Try/Catch decision diamond -->
+  <polygon points="285,300 345,322 285,344 225,322" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+  <text x="285" y="326" text-anchor="middle" font-size="10" font-weight="600" fill="#c9d1d9">try</text>
+
+  <!-- Try branch -> sign token -->
+  <text x="200" y="350" text-anchor="middle" font-size="9" fill="#8b949e">ok</text>
+  <line x1="255" y1="338" x2="150" y2="360" stroke="#484f58" stroke-width="1.5" marker-end="url(#a5)"/>
+  <rect x="80" y="362" width="130" height="28" rx="6" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+  <text x="145" y="381" text-anchor="middle" font-size="10" fill="#c9d1d9">sign token</text>
+
+  <!-- Catch branch -> log error -->
+  <text x="370" y="350" text-anchor="middle" font-size="9" fill="#8b949e">catch</text>
+  <line x1="315" y1="338" x2="420" y2="360" stroke="#484f58" stroke-width="1.5" marker-end="url(#a5)"/>
+  <rect x="355" y="362" width="130" height="28" rx="6" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+  <text x="420" y="381" text-anchor="middle" font-size="10" fill="#c9d1d9">log error</text>
+
+  <!-- Both merge into finally -->
+  <line x1="145" y1="390" x2="245" y2="404" stroke="#484f58" stroke-width="1.5" marker-end="url(#a5)"/>
+  <line x1="420" y1="390" x2="325" y2="404" stroke="#484f58" stroke-width="1.5" marker-end="url(#a5)"/>
+  <rect x="250" y="398" width="70" height="18" rx="4" fill="#161b22" stroke="#484f58" stroke-width="1"/>
+  <text x="285" y="411" text-anchor="middle" font-size="9" fill="#8b949e">finally</text>
+</svg>

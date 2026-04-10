@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 240" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <marker id="a2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#484f58"/></marker>
+  </defs>
+  <rect width="700" height="240" rx="16" fill="#0d1117"/>
+  <text x="20" y="28" font-size="14" font-weight="700" fill="#484f58">L2a Feature Areas</text>
+
+  <!-- Auth cluster -->
+  <rect x="30" y="50" width="190" height="130" rx="14" fill="#162218" stroke="#73daca" stroke-width="2.5"/>
+  <text x="48" y="74" font-size="14" fill="#73daca">&#x2B21;</text>
+  <text x="68" y="75" font-size="13" font-weight="700" fill="#c9d1d9">Auth</text>
+  <text x="45" y="96" font-size="9" fill="#8b949e">3 files &#183; Cohesion: 85%</text>
+  <rect x="45" y="104" width="130" height="4" rx="2" fill="#1e2e22"/>
+  <rect x="45" y="104" width="110" height="4" rx="2" fill="#73daca" opacity="0.6"/>
+  <text x="45" y="128" font-size="9" fill="#8b949e">authController.js</text>
+  <text x="45" y="141" font-size="9" fill="#8b949e">authRoutes.js</text>
+  <text x="45" y="154" font-size="9" fill="#8b949e">userModel.js</text>
+  <text x="45" y="172" font-size="9" fill="#484f58" font-style="italic">View APIs &#8594;</text>
+
+  <!-- Todos cluster -->
+  <rect x="260" y="50" width="190" height="130" rx="14" fill="#162218" stroke="#73daca" stroke-width="2.5"/>
+  <text x="278" y="74" font-size="14" fill="#73daca">&#x2B21;</text>
+  <text x="298" y="75" font-size="13" font-weight="700" fill="#c9d1d9">Todos</text>
+  <text x="275" y="96" font-size="9" fill="#8b949e">5 files &#183; Cohesion: 92%</text>
+  <rect x="275" y="104" width="130" height="4" rx="2" fill="#1e2e22"/>
+  <rect x="275" y="104" width="120" height="4" rx="2" fill="#73daca" opacity="0.6"/>
+  <text x="275" y="128" font-size="9" fill="#8b949e">todoController.js</text>
+  <text x="275" y="141" font-size="9" fill="#8b949e">todoService.js</text>
+  <text x="275" y="154" font-size="9" fill="#8b949e">todoModel.js + 2 more</text>
+  <text x="275" y="172" font-size="9" fill="#484f58" font-style="italic">View APIs &#8594;</text>
+
+  <!-- Users cluster -->
+  <rect x="490" y="50" width="190" height="130" rx="14" fill="#162218" stroke="#73daca" stroke-width="2.5"/>
+  <text x="508" y="74" font-size="14" fill="#73daca">&#x2B21;</text>
+  <text x="528" y="75" font-size="13" font-weight="700" fill="#c9d1d9">Users</text>
+  <text x="505" y="96" font-size="9" fill="#8b949e">4 files &#183; Cohesion: 78%</text>
+  <rect x="505" y="104" width="130" height="4" rx="2" fill="#1e2e22"/>
+  <rect x="505" y="104" width="101" height="4" rx="2" fill="#73daca" opacity="0.6"/>
+  <text x="505" y="128" font-size="9" fill="#8b949e">userController.js</text>
+  <text x="505" y="141" font-size="9" fill="#8b949e">userService.js</text>
+  <text x="505" y="154" font-size="9" fill="#8b949e">userRoutes.js + 1 more</text>
+  <text x="505" y="172" font-size="9" fill="#484f58" font-style="italic">View APIs &#8594;</text>
+
+  <!-- Edges -->
+  <line x1="222" y1="115" x2="258" y2="115" stroke="#484f58" stroke-width="1.5" marker-end="url(#a2)"/>
+  <text x="240" y="110" text-anchor="middle" font-size="8" fill="#484f58">3 calls</text>
+  <line x1="452" y1="115" x2="488" y2="115" stroke="#484f58" stroke-width="1.5" marker-end="url(#a2)"/>
+  <text x="470" y="110" text-anchor="middle" font-size="8" fill="#484f58">2 calls</text>
+  <line x1="220" y1="182" x2="488" y2="182" stroke="#484f58" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#a2)"/>
+  <text x="354" y="195" text-anchor="middle" font-size="8" fill="#484f58">1 import</text>
+
+  <!-- Legend -->
+  <rect x="20" y="214" width="660" height="18" rx="6" fill="#161b22"/>
+  <text x="35" y="227" font-size="9" fill="#73daca">&#x2B21;</text>
+  <text x="50" y="227" font-size="9" fill="#8b949e">Cluster detected via Louvain community detection &#183; Cohesion = internal calls / total calls</text>
+</svg>

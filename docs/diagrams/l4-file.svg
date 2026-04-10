@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <marker id="a4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#7dcfff"/></marker>
+  </defs>
+  <rect width="700" height="280" rx="16" fill="#0d1117"/>
+  <text x="20" y="28" font-size="14" font-weight="700" fill="#484f58">L4 File: authController.js</text>
+
+  <!-- Imports section -->
+  <rect x="20" y="44" width="200" height="100" rx="10" fill="#161b22" stroke="#484f58" stroke-width="1.5"/>
+  <text x="35" y="63" font-size="10" font-weight="700" fill="#8b949e">&#9776; Imports</text>
+  <rect x="30" y="72" width="180" height="22" rx="6" fill="#1a1e2e" stroke="#7dcfff" stroke-width="1.5"/>
+  <text x="40" y="87" font-size="10" fill="#c9d1d9">&#x1F4E6; express</text>
+  <rect x="30" y="100" width="180" height="22" rx="6" fill="#1a1e2e" stroke="#7dcfff" stroke-width="1.5"/>
+  <text x="40" y="115" font-size="10" fill="#c9d1d9">&#x1F4E6; jsonwebtoken</text>
+  <rect x="30" y="128" width="180" height="22" rx="6" fill="#1a1e2e" stroke="#484f58" stroke-width="1" opacity="0.45"/>
+  <text x="40" y="143" font-size="10" fill="#8b949e">&#x1F4E6; lodash (unused)</text>
+
+  <!-- Functions section -->
+  <rect x="250" y="44" width="210" height="132" rx="10" fill="#161b22" stroke="#484f58" stroke-width="1.5"/>
+  <text x="265" y="63" font-size="10" font-weight="700" fill="#8b949e">&#x0192; Functions</text>
+  <rect x="260" y="72" width="190" height="26" rx="6" fill="#1a2e2e" stroke="#7dcfff" stroke-width="1.5"/>
+  <text x="270" y="90" font-size="11" font-weight="600" fill="#c9d1d9">&#x0192; register()</text>
+  <rect x="260" y="104" width="190" height="26" rx="6" fill="#1a2e2e" stroke="#7dcfff" stroke-width="1.5"/>
+  <text x="270" y="122" font-size="11" font-weight="600" fill="#c9d1d9">&#x0192; login()</text>
+  <rect x="260" y="136" width="190" height="26" rx="6" fill="#1a2e2e" stroke="#7dcfff" stroke-width="1.5"/>
+  <text x="270" y="154" font-size="11" font-weight="600" fill="#c9d1d9">&#x0192; getCurrentUser()</text>
+
+  <!-- Variables section -->
+  <rect x="490" y="44" width="190" height="68" rx="10" fill="#161b22" stroke="#484f58" stroke-width="1.5"/>
+  <text x="505" y="63" font-size="10" font-weight="700" fill="#8b949e">&#x1F4CC; Variables</text>
+  <rect x="500" y="72" width="170" height="22" rx="6" fill="#1a2028" stroke="#7dcfff" stroke-width="1"/>
+  <text x="510" y="87" font-size="10" fill="#c9d1d9">&#x1F4CC; router</text>
+  <rect x="500" y="100" width="170" height="22" rx="6" fill="#1a2028" stroke="#7dcfff" stroke-width="1"/>
+  <text x="510" y="115" font-size="10" fill="#c9d1d9">&#x1F4CC; JWT_SECRET</text>
+
+  <!-- Dependency edges -->
+  <line x1="260" y1="85" x2="215" y2="85" stroke="#7dcfff" stroke-width="1.5" stroke-opacity="0.5" marker-end="url(#a4)"/>
+  <line x1="260" y1="117" x2="215" y2="106" stroke="#7dcfff" stroke-width="1.5" stroke-opacity="0.5" marker-end="url(#a4)"/>
+  <line x1="355" y1="170" x2="505" y2="85" stroke="#7dcfff" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="4,3" marker-end="url(#a4)"/>
+  <line x1="355" y1="149" x2="505" y2="111" stroke="#7dcfff" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="4,3" marker-end="url(#a4)"/>
+
+  <!-- Class hierarchy example -->
+  <rect x="490" y="135" width="190" height="50" rx="10" fill="#161b22" stroke="#484f58" stroke-width="1.5"/>
+  <text x="505" y="155" font-size="10" font-weight="700" fill="#8b949e">Hierarchy</text>
+  <text x="505" y="175" font-size="9" fill="#7dcfff">AuthController extends BaseController</text>
+
+  <!-- Stats -->
+  <rect x="20" y="195" width="660" height="28" rx="6" fill="#161b22"/>
+  <text x="35" y="213" font-size="10" fill="#8b949e">3 functions &#183; 3 imports (1 unused) &#183; 2 variables &#183; 5 dependency edges</text>
+
+  <!-- Legend -->
+  <rect x="20" y="254" width="660" height="18" rx="6" fill="#161b22"/>
+  <text x="35" y="267" font-size="9" fill="#8b949e">Solid edges: calls &#183; Dashed edges: uses &#183; Dimmed nodes: unused imports (45% opacity)</text>
+</svg>

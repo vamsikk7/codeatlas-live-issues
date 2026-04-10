@@ -1,0 +1,281 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 260" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <clipPath id="clip"><rect x="0" y="0" width="620" height="260"/></clipPath>
+    <marker id="ac" markerWidth="6" markerHeight="5" refX="5" refY="2.5" orient="auto"><polygon points="0 0,6 2.5,0 5" fill="#484f58"/></marker>
+  </defs>
+  <rect width="620" height="260" rx="12" fill="#0d1117"/>
+  <g clip-path="url(#clip)">
+    <g>
+      <!-- 7 slides x 620px each = 4340px total. Each slide: hold 1.5s + snap 0.15s = ~1.65s. Total ~11.55s round. Use keyframes: 0% = slide1, ~14.3% = snap to slide2, etc. -->
+      <animateTransform attributeName="transform" type="translate" dur="14s" repeatCount="indefinite"
+        values="0,0; 0,0; -620,0; -620,0; -1240,0; -1240,0; -1860,0; -1860,0; -2480,0; -2480,0; -3100,0; -3100,0; -3720,0; -3720,0; -4340,0"
+        keyTimes="0; 0.13; 0.14; 0.27; 0.28; 0.41; 0.42; 0.55; 0.56; 0.69; 0.70; 0.83; 0.84; 0.97; 1"
+        calcMode="spline"
+        keySplines="0 0 1 1; .4 0 .2 1; 0 0 1 1; .4 0 .2 1; 0 0 1 1; .4 0 .2 1; 0 0 1 1; .4 0 .2 1; 0 0 1 1; .4 0 .2 1; 0 0 1 1; .4 0 .2 1; 0 0 1 1; .4 0 .2 1"/>
+
+      <!-- ===== SLIDE 1: L1 System Design ===== -->
+      <g transform="translate(0,0)">
+        <rect x="10" y="10" width="600" height="240" rx="14" fill="#0d1117" stroke="#1e2430" stroke-width="1"/>
+        <rect x="20" y="18" width="95" height="20" rx="5" fill="#7aa2f7" opacity="0.15"/><text x="67" y="32" text-anchor="middle" font-size="10" font-weight="700" fill="#7aa2f7">L1 SYSTEM</text>
+        <!-- backend -->
+        <rect x="30" y="55" width="180" height="85" rx="12" fill="#161b2e" stroke="#7aa2f7" stroke-width="2"/>
+        <text x="120" y="85" text-anchor="middle" font-size="14" font-weight="700" fill="#c9d1d9">backend</text>
+        <text x="120" y="102" text-anchor="middle" font-size="10" fill="#7aa2f7">Express + Python</text>
+        <text x="120" y="118" text-anchor="middle" font-size="9" fill="#8b949e">11 APIs</text>
+        <!-- frontend -->
+        <rect x="270" y="55" width="170" height="85" rx="12" fill="#161b2e" stroke="#73daca" stroke-width="2"/>
+        <text x="355" y="85" text-anchor="middle" font-size="14" font-weight="700" fill="#c9d1d9">frontend</text>
+        <text x="355" y="102" text-anchor="middle" font-size="10" fill="#73daca">Next.js</text>
+        <!-- edge -->
+        <line x1="270" y1="97" x2="215" y2="97" stroke="#484f58" stroke-width="1.5" marker-end="url(#ac)"/>
+        <!-- infra -->
+        <rect x="30" y="162" width="130" height="56" rx="8" fill="#1a1520" stroke="#bb9af7" stroke-width="1.5"/>
+        <text x="95" y="188" text-anchor="middle" font-size="12" font-weight="600" fill="#c9d1d9">MongoDB</text>
+        <text x="95" y="206" text-anchor="middle" font-size="9" fill="#bb9af7">database</text>
+        <rect x="180" y="162" width="110" height="56" rx="8" fill="#1a2018" stroke="#9ece6a" stroke-width="1.5"/>
+        <text x="235" y="188" text-anchor="middle" font-size="12" font-weight="600" fill="#c9d1d9">Redis</text>
+        <text x="235" y="206" text-anchor="middle" font-size="9" fill="#9ece6a">cache</text>
+        <rect x="310" y="162" width="110" height="56" rx="8" fill="#201a18" stroke="#ff9e64" stroke-width="1.5"/>
+        <text x="365" y="188" text-anchor="middle" font-size="12" font-weight="600" fill="#c9d1d9">Kafka</text>
+        <text x="365" y="206" text-anchor="middle" font-size="9" fill="#ff9e64">queue</text>
+        <!-- infra edges -->
+        <line x1="95" y1="142" x2="95" y2="158" stroke="#3b3f4a" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="170" y1="142" x2="235" y2="158" stroke="#3b3f4a" stroke-width="1" stroke-dasharray="4,3"/>
+        <!-- external -->
+        <rect x="470" y="55" width="130" height="85" rx="12" fill="#18181a" stroke="#484f58" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="535" y="88" text-anchor="middle" font-size="12" font-weight="600" fill="#8b949e">stripe.com</text>
+        <text x="535" y="106" text-anchor="middle" font-size="9" fill="#484f58">external</text>
+        <line x1="442" y1="97" x2="466" y2="97" stroke="#3b3f4a" stroke-width="1" stroke-dasharray="4,3"/>
+      </g>
+
+      <!-- ===== SLIDE 2: L2a Features ===== -->
+      <g transform="translate(620,0)">
+        <rect x="10" y="10" width="600" height="240" rx="14" fill="#0d1117" stroke="#1e2430" stroke-width="1"/>
+        <rect x="20" y="18" width="110" height="20" rx="5" fill="#73daca" opacity="0.15"/><text x="75" y="32" text-anchor="middle" font-size="10" font-weight="700" fill="#73daca">L2a FEATURES</text>
+        <!-- Auth -->
+        <rect x="25" y="55" width="175" height="170" rx="12" fill="#162218" stroke="#73daca" stroke-width="2"/>
+        <text x="112" y="80" text-anchor="middle" font-size="14" font-weight="700" fill="#c9d1d9">Auth</text>
+        <text x="112" y="98" text-anchor="middle" font-size="9" fill="#8b949e">3 files &#183; Cohesion: 85%</text>
+        <rect x="42" y="108" width="140" height="5" rx="2" fill="#1e2e22"/><rect x="42" y="108" width="119" height="5" rx="2" fill="#73daca" opacity="0.5"/>
+        <text x="42" y="134" font-size="9" fill="#8b949e">authController.js</text>
+        <text x="42" y="150" font-size="9" fill="#8b949e">authRoutes.js</text>
+        <text x="42" y="166" font-size="9" fill="#8b949e">userModel.js</text>
+        <text x="112" y="210" text-anchor="middle" font-size="9" fill="#484f58" font-style="italic">View APIs &#8594;</text>
+        <!-- Todos -->
+        <rect x="220" y="55" width="175" height="170" rx="12" fill="#162218" stroke="#73daca" stroke-width="2"/>
+        <text x="307" y="80" text-anchor="middle" font-size="14" font-weight="700" fill="#c9d1d9">Todos</text>
+        <text x="307" y="98" text-anchor="middle" font-size="9" fill="#8b949e">5 files &#183; Cohesion: 92%</text>
+        <rect x="237" y="108" width="140" height="5" rx="2" fill="#1e2e22"/><rect x="237" y="108" width="129" height="5" rx="2" fill="#73daca" opacity="0.5"/>
+        <text x="237" y="134" font-size="9" fill="#8b949e">todoController.js</text>
+        <text x="237" y="150" font-size="9" fill="#8b949e">todoService.js</text>
+        <text x="237" y="166" font-size="9" fill="#8b949e">todoModel.js + 2 more</text>
+        <text x="307" y="210" text-anchor="middle" font-size="9" fill="#484f58" font-style="italic">View APIs &#8594;</text>
+        <!-- Users -->
+        <rect x="415" y="55" width="175" height="170" rx="12" fill="#162218" stroke="#73daca" stroke-width="2"/>
+        <text x="502" y="80" text-anchor="middle" font-size="14" font-weight="700" fill="#c9d1d9">Users</text>
+        <text x="502" y="98" text-anchor="middle" font-size="9" fill="#8b949e">4 files &#183; Cohesion: 78%</text>
+        <rect x="432" y="108" width="140" height="5" rx="2" fill="#1e2e22"/><rect x="432" y="108" width="109" height="5" rx="2" fill="#73daca" opacity="0.5"/>
+        <!-- edges -->
+        <line x1="202" y1="140" x2="218" y2="140" stroke="#484f58" stroke-width="1.5" marker-end="url(#ac)"/>
+        <text x="210" y="135" text-anchor="middle" font-size="7" fill="#484f58">3</text>
+        <line x1="397" y1="140" x2="413" y2="140" stroke="#484f58" stroke-width="1.5" marker-end="url(#ac)"/>
+        <text x="405" y="135" text-anchor="middle" font-size="7" fill="#484f58">2</text>
+      </g>
+
+      <!-- ===== SLIDE 3: L2b API List ===== -->
+      <g transform="translate(1240,0)">
+        <rect x="10" y="10" width="600" height="240" rx="14" fill="#0d1117" stroke="#1e2430" stroke-width="1"/>
+        <rect x="20" y="18" width="100" height="20" rx="5" fill="#e0af68" opacity="0.15"/><text x="70" y="32" text-anchor="middle" font-size="10" font-weight="700" fill="#e0af68">L2b API LIST</text>
+        <!-- Header -->
+        <rect x="20" y="50" width="580" height="26" rx="6" fill="#161b22"/>
+        <rect x="28" y="54" width="60" height="18" rx="4" fill="#7aa2f7"/><text x="58" y="67" text-anchor="middle" font-size="9" font-weight="700" fill="#0d1117">Feature</text>
+        <text x="100" y="67" font-size="12" font-weight="700" fill="#c9d1d9">Auth</text>
+        <text x="350" y="67" font-size="9" fill="#8b949e">Service: backend &#183; 3 APIs &#183; 3 files</text>
+        <!-- Filter -->
+        <rect x="20" y="82" width="580" height="26" rx="5" fill="#1a1e28"/>
+        <rect x="28" y="87" width="220" height="16" rx="3" fill="#0d1117" stroke="#484f58" stroke-width="1"/>
+        <text x="38" y="99" font-size="9" fill="#484f58">Filter by route or handler... (/)</text>
+        <rect x="260" y="87" width="34" height="16" rx="3" fill="#7aa2f7"/><text x="277" y="99" text-anchor="middle" font-size="8" font-weight="700" fill="#0d1117">ALL</text>
+        <rect x="298" y="87" width="34" height="16" rx="3" fill="none" stroke="#484f58" stroke-width="1"/><text x="315" y="99" text-anchor="middle" font-size="8" fill="#8b949e">GET</text>
+        <rect x="336" y="87" width="40" height="16" rx="3" fill="none" stroke="#484f58" stroke-width="1"/><text x="356" y="99" text-anchor="middle" font-size="8" fill="#8b949e">POST</text>
+        <!-- Rows -->
+        <rect x="20" y="114" width="580" height="26" rx="4" fill="#161b22"/>
+        <rect x="28" y="119" width="40" height="16" rx="3" fill="#7aa2f7"/><text x="48" y="131" text-anchor="middle" font-size="8" font-weight="700" fill="#0d1117">POST</text>
+        <text x="78" y="131" font-size="11" fill="#c9d1d9">/api/auth/register</text>
+        <text x="530" y="131" font-size="10" fill="#8b949e">register</text>
+        <rect x="20" y="144" width="580" height="26" rx="4" fill="#1a1e28"/>
+        <rect x="28" y="149" width="40" height="16" rx="3" fill="#7aa2f7"/><text x="48" y="161" text-anchor="middle" font-size="8" font-weight="700" fill="#0d1117">POST</text>
+        <text x="78" y="161" font-size="11" fill="#c9d1d9">/api/auth/login</text>
+        <text x="530" y="161" font-size="10" fill="#8b949e">login</text>
+        <rect x="20" y="174" width="580" height="26" rx="4" fill="#161b22"/>
+        <rect x="28" y="179" width="34" height="16" rx="3" fill="#4ec9b0"/><text x="45" y="191" text-anchor="middle" font-size="8" font-weight="700" fill="#0d1117">GET</text>
+        <text x="72" y="191" font-size="11" fill="#c9d1d9">/api/auth/me</text>
+        <text x="530" y="191" font-size="10" fill="#8b949e">getCurrentUser</text>
+        <!-- Mobile sections -->
+        <rect x="20" y="208" width="580" height="20" rx="3" fill="#161b22" stroke="#7aa2f7" stroke-width="0.5" stroke-opacity="0.3"/>
+        <text x="34" y="222" font-size="9" fill="#7aa2f7">Screens / Pages (2)</text>
+        <rect x="20" y="232" width="580" height="20" rx="3" fill="#161b22" stroke="#73daca" stroke-width="0.5" stroke-opacity="0.3"/>
+        <text x="34" y="246" font-size="9" fill="#73daca">Navigation Routes (3)</text>
+      </g>
+
+      <!-- ===== SLIDE 4: L3 Sequence ===== -->
+      <g transform="translate(1860,0)">
+        <rect x="10" y="10" width="600" height="240" rx="14" fill="#0d1117" stroke="#1e2430" stroke-width="1"/>
+        <rect x="20" y="18" width="115" height="20" rx="5" fill="#bb9af7" opacity="0.15"/><text x="77" y="32" text-anchor="middle" font-size="10" font-weight="700" fill="#bb9af7">L3 SEQUENCE</text>
+        <!-- Participants -->
+        <rect x="25" y="55" width="100" height="32" rx="7" fill="#161b2e" stroke="#7aa2f7" stroke-width="1.5"/>
+        <text x="75" y="76" text-anchor="middle" font-size="10" font-weight="700" fill="#c9d1d9">Client</text>
+        <rect x="160" y="55" width="130" height="32" rx="7" fill="#161b2e" stroke="#bb9af7" stroke-width="1.5"/>
+        <text x="225" y="70" text-anchor="middle" font-size="10" font-weight="700" fill="#c9d1d9">authController</text>
+        <text x="225" y="82" text-anchor="middle" font-size="7" fill="#8b949e">authController.js</text>
+        <rect x="325" y="55" width="110" height="32" rx="7" fill="#161b2e" stroke="#bb9af7" stroke-width="1.5"/>
+        <text x="380" y="76" text-anchor="middle" font-size="10" font-weight="700" fill="#c9d1d9">userModel</text>
+        <rect x="470" y="55" width="110" height="32" rx="7" fill="#1a1520" stroke="#bb9af7" stroke-width="1.5"/>
+        <text x="525" y="76" text-anchor="middle" font-size="10" font-weight="700" fill="#c9d1d9">MongoDB</text>
+        <!-- Lifelines -->
+        <line x1="75" y1="90" x2="75" y2="240" stroke="#484f58" stroke-width="0.8" stroke-dasharray="3,3"/>
+        <line x1="225" y1="90" x2="225" y2="240" stroke="#484f58" stroke-width="0.8" stroke-dasharray="3,3"/>
+        <line x1="380" y1="90" x2="380" y2="240" stroke="#484f58" stroke-width="0.8" stroke-dasharray="3,3"/>
+        <line x1="525" y1="90" x2="525" y2="240" stroke="#484f58" stroke-width="0.8" stroke-dasharray="3,3"/>
+        <!-- Messages -->
+        <line x1="75" y1="115" x2="220" y2="115" stroke="#bb9af7" stroke-width="1.5" marker-end="url(#ac)"/>
+        <text x="147" y="110" text-anchor="middle" font-size="8" fill="#bb9af7">POST /login</text>
+        <line x1="225" y1="142" x2="375" y2="142" stroke="#bb9af7" stroke-width="1.5" marker-end="url(#ac)"/>
+        <text x="300" y="137" text-anchor="middle" font-size="8" fill="#bb9af7">findOne()</text>
+        <line x1="380" y1="168" x2="520" y2="168" stroke="#bb9af7" stroke-width="1.5" marker-end="url(#ac)"/>
+        <text x="450" y="163" text-anchor="middle" font-size="8" fill="#bb9af7">query</text>
+        <!-- Returns -->
+        <line x1="520" y1="188" x2="385" y2="188" stroke="#484f58" stroke-width="1" stroke-dasharray="5,3"/>
+        <text x="452" y="184" text-anchor="middle" font-size="7" fill="#8b949e">result</text>
+        <line x1="375" y1="208" x2="230" y2="208" stroke="#484f58" stroke-width="1" stroke-dasharray="5,3"/>
+        <text x="302" y="204" text-anchor="middle" font-size="7" fill="#8b949e">user</text>
+        <line x1="220" y1="228" x2="80" y2="228" stroke="#484f58" stroke-width="1" stroke-dasharray="5,3"/>
+        <text x="150" y="224" text-anchor="middle" font-size="7" fill="#8b949e">token</text>
+      </g>
+
+      <!-- ===== SLIDE 5: L4 File ===== -->
+      <g transform="translate(2480,0)">
+        <rect x="10" y="10" width="600" height="240" rx="14" fill="#0d1117" stroke="#1e2430" stroke-width="1"/>
+        <rect x="20" y="18" width="75" height="20" rx="5" fill="#7dcfff" opacity="0.15"/><text x="57" y="32" text-anchor="middle" font-size="10" font-weight="700" fill="#7dcfff">L4 FILE</text>
+        <!-- Imports -->
+        <rect x="20" y="55" width="175" height="120" rx="8" fill="#161b22" stroke="#484f58" stroke-width="1"/>
+        <text x="32" y="72" font-size="9" font-weight="700" fill="#8b949e">Imports</text>
+        <rect x="28" y="80" width="158" height="22" rx="5" fill="#1a1e2e" stroke="#7dcfff" stroke-width="1"/>
+        <text x="38" y="96" font-size="10" fill="#c9d1d9">express</text>
+        <rect x="28" y="108" width="158" height="22" rx="5" fill="#1a1e2e" stroke="#7dcfff" stroke-width="1"/>
+        <text x="38" y="124" font-size="10" fill="#c9d1d9">jsonwebtoken</text>
+        <rect x="28" y="136" width="158" height="22" rx="5" fill="#1a1e2e" stroke="#484f58" stroke-width="1" opacity="0.45"/>
+        <text x="38" y="152" font-size="10" fill="#8b949e">lodash (unused)</text>
+        <!-- Functions -->
+        <rect x="215" y="55" width="195" height="120" rx="8" fill="#161b22" stroke="#484f58" stroke-width="1"/>
+        <text x="227" y="72" font-size="9" font-weight="700" fill="#8b949e">Functions</text>
+        <rect x="223" y="80" width="178" height="22" rx="5" fill="#1a2e2e" stroke="#7dcfff" stroke-width="1"/>
+        <text x="233" y="96" font-size="10" font-weight="600" fill="#c9d1d9">register()</text>
+        <rect x="223" y="108" width="178" height="22" rx="5" fill="#1a2e2e" stroke="#7dcfff" stroke-width="1"/>
+        <text x="233" y="124" font-size="10" font-weight="600" fill="#c9d1d9">login()</text>
+        <rect x="223" y="136" width="178" height="22" rx="5" fill="#1a2e2e" stroke="#7dcfff" stroke-width="1"/>
+        <text x="233" y="152" font-size="10" font-weight="600" fill="#c9d1d9">getCurrentUser()</text>
+        <!-- Variables -->
+        <rect x="430" y="55" width="170" height="85" rx="8" fill="#161b22" stroke="#484f58" stroke-width="1"/>
+        <text x="442" y="72" font-size="9" font-weight="700" fill="#8b949e">Variables</text>
+        <rect x="438" y="80" width="153" height="22" rx="5" fill="#1a2028" stroke="#7dcfff" stroke-width="1"/>
+        <text x="448" y="96" font-size="10" fill="#c9d1d9">router</text>
+        <rect x="438" y="108" width="153" height="22" rx="5" fill="#1a2028" stroke="#7dcfff" stroke-width="1"/>
+        <text x="448" y="124" font-size="10" fill="#c9d1d9">JWT_SECRET</text>
+        <!-- Edges -->
+        <line x1="215" y1="91" x2="192" y2="91" stroke="#7dcfff" stroke-width="1" opacity="0.4"/>
+        <line x1="215" y1="119" x2="192" y2="116" stroke="#7dcfff" stroke-width="1" opacity="0.4"/>
+        <!-- Stats -->
+        <rect x="20" y="192" width="580" height="22" rx="5" fill="#161b22"/>
+        <text x="35" y="208" font-size="9" fill="#8b949e">3 functions &#183; 3 imports (1 unused at 45% opacity) &#183; 2 variables &#183; 5 dependency edges</text>
+      </g>
+
+      <!-- ===== SLIDE 6: L5 Flow ===== -->
+      <g transform="translate(3100,0)">
+        <rect x="10" y="10" width="600" height="240" rx="14" fill="#0d1117" stroke="#1e2430" stroke-width="1"/>
+        <rect x="20" y="18" width="80" height="20" rx="5" fill="#ff9e64" opacity="0.15"/><text x="60" y="32" text-anchor="middle" font-size="10" font-weight="700" fill="#ff9e64">L5 FLOW</text>
+        <!-- Entry -->
+        <rect x="255" y="48" width="80" height="24" rx="12" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+        <text x="295" y="65" text-anchor="middle" font-size="10" font-weight="600" fill="#c9d1d9">Entry</text>
+        <line x1="295" y1="72" x2="295" y2="84" stroke="#484f58" stroke-width="1.5" marker-end="url(#ac)"/>
+        <!-- Decision: valid? -->
+        <polygon points="295,88 355,112 295,136 235,112" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+        <text x="295" y="116" text-anchor="middle" font-size="10" font-weight="600" fill="#c9d1d9">valid?</text>
+        <line x1="355" y1="112" x2="460" y2="112" stroke="#484f58" stroke-width="1.5" marker-end="url(#ac)"/>
+        <text x="405" y="106" text-anchor="middle" font-size="8" fill="#8b949e">No</text>
+        <rect x="465" y="100" width="100" height="24" rx="5" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+        <text x="515" y="117" text-anchor="middle" font-size="10" fill="#c9d1d9">throw 401</text>
+        <!-- Yes -->
+        <line x1="295" y1="136" x2="295" y2="148" stroke="#484f58" stroke-width="1.5" marker-end="url(#ac)"/>
+        <text x="306" y="145" font-size="8" fill="#8b949e">Yes</text>
+        <!-- Try diamond -->
+        <polygon points="295,152 345,172 295,192 245,172" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+        <text x="295" y="176" text-anchor="middle" font-size="10" font-weight="600" fill="#c9d1d9">try</text>
+        <!-- ok -->
+        <line x1="245" y1="172" x2="140" y2="195" stroke="#484f58" stroke-width="1.5" marker-end="url(#ac)"/>
+        <text x="188" y="180" text-anchor="middle" font-size="8" fill="#8b949e">ok</text>
+        <rect x="50" y="198" width="120" height="24" rx="5" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+        <text x="110" y="215" text-anchor="middle" font-size="10" fill="#c9d1d9">sign token</text>
+        <!-- catch -->
+        <line x1="345" y1="172" x2="440" y2="195" stroke="#484f58" stroke-width="1.5" marker-end="url(#ac)"/>
+        <text x="398" y="180" text-anchor="middle" font-size="8" fill="#8b949e">catch</text>
+        <rect x="445" y="198" width="120" height="24" rx="5" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+        <text x="505" y="215" text-anchor="middle" font-size="10" fill="#c9d1d9">log error</text>
+        <!-- finally merge -->
+        <line x1="170" y1="222" x2="260" y2="236" stroke="#484f58" stroke-width="1" marker-end="url(#ac)"/>
+        <line x1="445" y1="222" x2="330" y2="236" stroke="#484f58" stroke-width="1" marker-end="url(#ac)"/>
+        <rect x="265" y="232" width="60" height="16" rx="3" fill="#161b22" stroke="#484f58" stroke-width="1"/>
+        <text x="295" y="244" text-anchor="middle" font-size="8" fill="#8b949e">finally</text>
+      </g>
+
+      <!-- ===== SLIDE 7: Diff Colors ===== -->
+      <g transform="translate(3720,0)">
+        <rect x="10" y="10" width="600" height="240" rx="14" fill="#0d1117" stroke="#1e2430" stroke-width="1"/>
+        <rect x="20" y="18" width="120" height="20" rx="5" fill="#e0af68" opacity="0.15"/><text x="80" y="32" text-anchor="middle" font-size="10" font-weight="700" fill="#e0af68">DIFF COLORS</text>
+        <!-- Added -->
+        <rect x="25" y="65" width="130" height="90" rx="10" fill="#182e1e" stroke="#4ec9b0" stroke-width="2.5"/>
+        <text x="90" y="96" text-anchor="middle" font-size="22" font-weight="800" fill="#4ec9b0">+</text>
+        <text x="90" y="116" text-anchor="middle" font-size="11" font-weight="700" fill="#4ec9b0">ADDED</text>
+        <text x="90" y="134" text-anchor="middle" font-size="8" fill="#8b949e">solid &#183; green</text>
+        <text x="90" y="147" text-anchor="middle" font-size="8" fill="#8b949e">animated edge</text>
+        <!-- Deleted -->
+        <rect x="170" y="65" width="130" height="90" rx="10" fill="#2e1818" stroke="#f44747" stroke-width="2.5" stroke-dasharray="6,4"/>
+        <text x="235" y="96" text-anchor="middle" font-size="22" font-weight="800" fill="#f44747">&#8722;</text>
+        <text x="235" y="116" text-anchor="middle" font-size="11" font-weight="700" fill="#f44747">DELETED</text>
+        <text x="235" y="134" text-anchor="middle" font-size="8" fill="#8b949e">dashed &#183; red</text>
+        <text x="235" y="147" text-anchor="middle" font-size="8" fill="#8b949e">70% opacity</text>
+        <!-- Modified -->
+        <rect x="315" y="65" width="130" height="90" rx="10" fill="#2e2418" stroke="#e0af68" stroke-width="2.5" stroke-dasharray="3,3"/>
+        <text x="380" y="96" text-anchor="middle" font-size="22" font-weight="800" fill="#e0af68">~</text>
+        <text x="380" y="116" text-anchor="middle" font-size="11" font-weight="700" fill="#e0af68">MODIFIED</text>
+        <text x="380" y="134" text-anchor="middle" font-size="8" fill="#8b949e">dotted &#183; orange</text>
+        <!-- Unchanged -->
+        <rect x="460" y="65" width="130" height="90" rx="10" fill="#1a1e28" stroke="#484f58" stroke-width="1.5"/>
+        <text x="525" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#484f58">UNCHANGED</text>
+        <text x="525" y="120" text-anchor="middle" font-size="8" fill="#8b949e">solid &#183; gray</text>
+        <!-- WCAG -->
+        <text x="310" y="195" text-anchor="middle" font-size="10" fill="#484f58">3 independent channels: color + symbol + border</text>
+        <text x="310" y="212" text-anchor="middle" font-size="9" fill="#484f58">WCAG 1.4.1 colorblind-safe</text>
+      </g>
+
+      <!-- ===== SLIDE 8: duplicate of SLIDE 1 for seamless loop ===== -->
+      <g transform="translate(4340,0)">
+        <rect x="10" y="10" width="600" height="240" rx="14" fill="#0d1117" stroke="#1e2430" stroke-width="1"/>
+        <rect x="20" y="18" width="95" height="20" rx="5" fill="#7aa2f7" opacity="0.15"/><text x="67" y="32" text-anchor="middle" font-size="10" font-weight="700" fill="#7aa2f7">L1 SYSTEM</text>
+        <rect x="30" y="55" width="180" height="85" rx="12" fill="#161b2e" stroke="#7aa2f7" stroke-width="2"/>
+        <text x="120" y="85" text-anchor="middle" font-size="14" font-weight="700" fill="#c9d1d9">backend</text>
+        <text x="120" y="102" text-anchor="middle" font-size="10" fill="#7aa2f7">Express + Python</text>
+        <rect x="270" y="55" width="170" height="85" rx="12" fill="#161b2e" stroke="#73daca" stroke-width="2"/>
+        <text x="355" y="85" text-anchor="middle" font-size="14" font-weight="700" fill="#c9d1d9">frontend</text>
+        <text x="355" y="102" text-anchor="middle" font-size="10" fill="#73daca">Next.js</text>
+        <line x1="270" y1="97" x2="215" y2="97" stroke="#484f58" stroke-width="1.5" marker-end="url(#ac)"/>
+        <rect x="30" y="162" width="130" height="56" rx="8" fill="#1a1520" stroke="#bb9af7" stroke-width="1.5"/>
+        <text x="95" y="188" text-anchor="middle" font-size="12" font-weight="600" fill="#c9d1d9">MongoDB</text>
+        <rect x="180" y="162" width="110" height="56" rx="8" fill="#1a2018" stroke="#9ece6a" stroke-width="1.5"/>
+        <text x="235" y="188" text-anchor="middle" font-size="12" font-weight="600" fill="#c9d1d9">Redis</text>
+        <rect x="310" y="162" width="110" height="56" rx="8" fill="#201a18" stroke="#ff9e64" stroke-width="1.5"/>
+        <text x="365" y="188" text-anchor="middle" font-size="12" font-weight="600" fill="#c9d1d9">Kafka</text>
+      </g>
+    </g>
+  </g>
+</svg>

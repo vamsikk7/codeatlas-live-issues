@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <marker id="ad" markerWidth="8" markerHeight="6" refX="4" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#484f58"/></marker>
+  </defs>
+  <rect width="700" height="420" rx="16" fill="#0d1117"/>
+
+  <!-- Column headers -->
+  <text x="120" y="25" text-anchor="middle" font-size="13" font-weight="800" fill="#e0af68">~ Modified</text>
+  <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="800" fill="#4ec9b0">+ Added</text>
+  <text x="580" y="25" text-anchor="middle" font-size="13" font-weight="800" fill="#f44747">&#8722; Deleted</text>
+
+  <!-- === MODIFIED COLUMN === -->
+  <rect x="20" y="40" width="200" height="44" rx="10" fill="#2e2418" stroke="#e0af68" stroke-width="2.5" stroke-dasharray="3,3"/>
+  <rect x="28" y="48" width="22" height="14" rx="3" fill="#e0af68"/><text x="39" y="59" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L5</text>
+  <text x="58" y="56" font-size="11" font-weight="700" fill="#c9d1d9">~ login()</text>
+  <text x="58" y="72" font-size="9.5" fill="#8b949e">dotted border, orange</text>
+  <line x1="120" y1="88" x2="120" y2="96" stroke="#484f58" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="20" y="100" width="200" height="44" rx="10" fill="#2e2418" stroke="#e0af68" stroke-width="2.5" stroke-dasharray="3,3"/>
+  <rect x="28" y="108" width="22" height="14" rx="3" fill="#e0af68"/><text x="39" y="119" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L4</text>
+  <text x="58" y="116" font-size="11" font-weight="700" fill="#c9d1d9">~ authController.js</text>
+  <text x="58" y="132" font-size="9.5" fill="#8b949e">function node highlighted</text>
+  <line x1="120" y1="148" x2="120" y2="156" stroke="#484f58" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="20" y="160" width="200" height="44" rx="10" fill="#2e2418" stroke="#e0af68" stroke-width="2.5" stroke-dasharray="3,3"/>
+  <rect x="28" y="168" width="22" height="14" rx="3" fill="#e0af68"/><text x="39" y="179" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L3</text>
+  <text x="58" y="176" font-size="11" font-weight="700" fill="#c9d1d9">~ POST /login</text>
+  <text x="58" y="192" font-size="9.5" fill="#8b949e">orange participant lane</text>
+  <line x1="120" y1="208" x2="120" y2="216" stroke="#484f58" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="20" y="220" width="200" height="44" rx="10" fill="#2e2418" stroke="#e0af68" stroke-width="2.5" stroke-dasharray="3,3"/>
+  <rect x="28" y="228" width="26" height="14" rx="3" fill="#e0af68"/><text x="41" y="239" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L2b</text>
+  <text x="62" y="236" font-size="11" font-weight="700" fill="#c9d1d9">~ login endpoint</text>
+  <text x="62" y="252" font-size="9.5" fill="#8b949e">diff badge on row</text>
+  <line x1="120" y1="268" x2="120" y2="276" stroke="#484f58" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="20" y="280" width="200" height="44" rx="10" fill="#2e2418" stroke="#e0af68" stroke-width="2.5" stroke-dasharray="3,3"/>
+  <rect x="28" y="288" width="26" height="14" rx="3" fill="#e0af68"/><text x="41" y="299" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L2a</text>
+  <text x="62" y="296" font-size="11" font-weight="700" fill="#c9d1d9">~ Auth cluster</text>
+  <text x="62" y="312" font-size="9.5" fill="#8b949e">cluster border orange</text>
+  <line x1="120" y1="328" x2="120" y2="336" stroke="#484f58" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="20" y="340" width="200" height="44" rx="10" fill="#2e2418" stroke="#e0af68" stroke-width="2.5" stroke-dasharray="3,3"/>
+  <rect x="28" y="348" width="22" height="14" rx="3" fill="#e0af68"/><text x="39" y="359" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L1</text>
+  <text x="58" y="356" font-size="11" font-weight="700" fill="#c9d1d9">~ backend</text>
+  <text x="58" y="372" font-size="9.5" fill="#8b949e">service shows ~ badge</text>
+
+  <!-- === ADDED COLUMN === -->
+  <rect x="250" y="40" width="200" height="44" rx="10" fill="#182e1e" stroke="#4ec9b0" stroke-width="2.5"/>
+  <rect x="258" y="48" width="22" height="14" rx="3" fill="#4ec9b0"/><text x="269" y="59" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L5</text>
+  <text x="288" y="56" font-size="11" font-weight="700" fill="#c9d1d9">+ processPayment()</text>
+  <text x="288" y="72" font-size="9.5" fill="#8b949e">solid green, animated</text>
+  <line x1="350" y1="88" x2="350" y2="96" stroke="#484f58" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="250" y="100" width="200" height="44" rx="10" fill="#182e1e" stroke="#4ec9b0" stroke-width="2.5"/>
+  <rect x="258" y="108" width="22" height="14" rx="3" fill="#4ec9b0"/><text x="269" y="119" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L4</text>
+  <text x="288" y="116" font-size="11" font-weight="700" fill="#c9d1d9">+ stripeClient.js</text>
+  <text x="288" y="132" font-size="9.5" fill="#8b949e">entire file node green</text>
+  <line x1="350" y1="148" x2="350" y2="156" stroke="#484f58" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="250" y="160" width="200" height="44" rx="10" fill="#182e1e" stroke="#4ec9b0" stroke-width="2.5"/>
+  <rect x="258" y="168" width="22" height="14" rx="3" fill="#4ec9b0"/><text x="269" y="179" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L3</text>
+  <text x="288" y="176" font-size="11" font-weight="700" fill="#c9d1d9">+ POST /api/pay</text>
+  <text x="288" y="192" font-size="9.5" fill="#8b949e">new sequence diagram</text>
+  <line x1="350" y1="208" x2="350" y2="216" stroke="#484f58" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="250" y="220" width="200" height="44" rx="10" fill="#182e1e" stroke="#4ec9b0" stroke-width="2.5"/>
+  <rect x="258" y="228" width="26" height="14" rx="3" fill="#4ec9b0"/><text x="271" y="239" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L2b</text>
+  <text x="292" y="236" font-size="11" font-weight="700" fill="#c9d1d9">+ pay endpoint</text>
+  <text x="292" y="252" font-size="9.5" fill="#8b949e">new row with + badge</text>
+  <line x1="350" y1="268" x2="350" y2="276" stroke="#484f58" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="250" y="280" width="200" height="44" rx="10" fill="#182e1e" stroke="#4ec9b0" stroke-width="2.5"/>
+  <rect x="258" y="288" width="26" height="14" rx="3" fill="#4ec9b0"/><text x="271" y="299" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L2a</text>
+  <text x="292" y="296" font-size="11" font-weight="700" fill="#c9d1d9">+ Payments cluster</text>
+  <text x="292" y="312" font-size="9.5" fill="#8b949e">new green node</text>
+  <line x1="350" y1="328" x2="350" y2="336" stroke="#484f58" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="250" y="340" width="200" height="44" rx="10" fill="#2e2418" stroke="#e0af68" stroke-width="2.5" stroke-dasharray="3,3"/>
+  <rect x="258" y="348" width="22" height="14" rx="3" fill="#e0af68"/><text x="269" y="359" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L1</text>
+  <text x="288" y="356" font-size="11" font-weight="700" fill="#c9d1d9">~ backend</text>
+  <text x="288" y="372" font-size="9.5" fill="#8b949e">API count increased</text>
+
+  <!-- === DELETED COLUMN === -->
+  <rect x="480" y="40" width="200" height="44" rx="10" fill="#2e1818" stroke="#f44747" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.8"/>
+  <rect x="488" y="48" width="22" height="14" rx="3" fill="#f44747"/><text x="499" y="59" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L5</text>
+  <text x="518" y="56" font-size="11" font-weight="700" fill="#c9d1d9">&#8722; validate()</text>
+  <text x="518" y="72" font-size="9.5" fill="#8b949e">ghost, dashed, 70%</text>
+  <line x1="580" y1="88" x2="580" y2="96" stroke="#484f58" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="480" y="100" width="200" height="44" rx="10" fill="#2e1818" stroke="#f44747" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.8"/>
+  <rect x="488" y="108" width="22" height="14" rx="3" fill="#f44747"/><text x="499" y="119" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L4</text>
+  <text x="518" y="116" font-size="11" font-weight="700" fill="#c9d1d9" text-decoration="line-through">&#8722; oldAuth.js</text>
+  <text x="518" y="132" font-size="9.5" fill="#8b949e">strikethrough label</text>
+  <line x1="580" y1="148" x2="580" y2="156" stroke="#484f58" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="480" y="160" width="200" height="44" rx="10" fill="#2e1818" stroke="#f44747" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.8"/>
+  <rect x="488" y="168" width="22" height="14" rx="3" fill="#f44747"/><text x="499" y="179" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L3</text>
+  <text x="518" y="176" font-size="11" font-weight="700" fill="#c9d1d9">&#8722; GET /old-auth</text>
+  <text x="518" y="192" font-size="9.5" fill="#8b949e">dashed participant lines</text>
+  <line x1="580" y1="208" x2="580" y2="216" stroke="#484f58" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="480" y="220" width="200" height="44" rx="10" fill="#2e1818" stroke="#f44747" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.8"/>
+  <rect x="488" y="228" width="26" height="14" rx="3" fill="#f44747"/><text x="501" y="239" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L2b</text>
+  <text x="522" y="236" font-size="11" font-weight="700" fill="#c9d1d9">&#8722; old-auth</text>
+  <text x="522" y="252" font-size="9.5" fill="#8b949e">row with &#8722; badge</text>
+  <line x1="580" y1="268" x2="580" y2="276" stroke="#484f58" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="480" y="280" width="200" height="44" rx="10" fill="#2e1818" stroke="#f44747" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.8"/>
+  <rect x="488" y="288" width="26" height="14" rx="3" fill="#f44747"/><text x="501" y="299" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L2a</text>
+  <text x="522" y="296" font-size="11" font-weight="700" fill="#c9d1d9">&#8722; Legacy cluster</text>
+  <text x="522" y="312" font-size="9.5" fill="#8b949e">red dashed node</text>
+  <line x1="580" y1="328" x2="580" y2="336" stroke="#484f58" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="480" y="340" width="200" height="44" rx="10" fill="#2e2418" stroke="#e0af68" stroke-width="2.5" stroke-dasharray="3,3"/>
+  <rect x="488" y="348" width="22" height="14" rx="3" fill="#e0af68"/><text x="499" y="359" text-anchor="middle" font-size="8" font-weight="800" fill="#0d1117">L1</text>
+  <text x="518" y="356" font-size="11" font-weight="700" fill="#c9d1d9">~ backend</text>
+  <text x="518" y="372" font-size="9.5" fill="#8b949e">API count decreased</text>
+
+  <!-- Legend bar -->
+  <rect x="20" y="396" width="660" height="18" rx="6" fill="#161b22"/>
+  <circle cx="50" cy="405" r="4" fill="#e0af68"/><text x="60" y="409" font-size="9" fill="#8b949e">Modified: dotted border</text>
+  <circle cx="230" cy="405" r="4" fill="#4ec9b0"/><text x="240" y="409" font-size="9" fill="#8b949e">Added: solid + animated</text>
+  <circle cx="420" cy="405" r="4" fill="#f44747"/><text x="430" y="409" font-size="9" fill="#8b949e">Deleted: dashed, 70%</text>
+</svg>
