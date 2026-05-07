@@ -15,7 +15,9 @@ Install the extension. CodeAtlas **auto-scans your workspace on launch** and bui
 
 **View diagrams in your browser** at `http://localhost:7742` for the best experience — full screen, multi-monitor, DevTools access.
 
-[**Watch the 2-minute demo**](https://www.codeatlas.live/assets/demo.mp4)
+[**Watch the 2-minute demo**]
+
+https://www.codeatlas.live/assets/demo.mp4
 
 
 <!-- <div align="center">
