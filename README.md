@@ -17,7 +17,7 @@ Install the extension. CodeAtlas **auto-scans your workspace on launch** and bui
 
 Watch the demo video
   
-https://github.com/vamsikk7/codeatlas-live-issues/raw/main/videos/demo-yc-may-export.mp4" type="video/mp4
+https://github.com/vamsikk7/codeatlas-live-issues/raw/main/videos/demo-yc-may-export.mp4
 
 
 <!-- <div align="center">
