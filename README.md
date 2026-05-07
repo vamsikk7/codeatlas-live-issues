@@ -15,16 +15,18 @@ Install the extension. CodeAtlas **auto-scans your workspace on launch** and bui
 
 **View diagrams in your browser** at `http://localhost:7742` for the best experience — full screen, multi-monitor, DevTools access.
 
-<div align="center">
 Watch the demo video
   
 https://github.com/vamsikk7/codeatlas-live-issues/raw/main/videos/demo-yc-may-export.mp4" type="video/mp4
+
+
+<!-- <div align="center">
 <video width="100%" controls>
   <source src="https://github.com/vamsikk7/codeatlas-live-issues/raw/main/videos/demo-yc-may-export.mp4" type="video/mp4">
   ▶ <a href="https://github.com/vamsikk7/codeatlas-live-issues/raw/main/videos/demo-yc-may-export.mp4">Watch the demo video</a>
 </video>
 
-</div>
+</div> -->
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/vamsikk7/codeatlas-live-issues/main/docs/diagrams/carousel.gif" alt="Continuous carousel: L1 System Design, L2a Features, L2b API List, L3 Sequence, L4 File, L5 Flow, Diff Colors" width="100%"/>
