@@ -413,6 +413,201 @@ is processed downstream.
 
 ---
 
+## AI Assistant Integration (MCP)
+
+CodeAtlas ships a standalone Model Context Protocol server that any MCP-compatible LLM client can consume. **Pointing your agent at a workspace gives the model live structural answers — routes, sequences, diffs, impact analysis, architecture violations, full SQL access — without it reading the source files.**
+
+### Why it matters: token economics
+
+Measured against the test project, every query returns **5×–60× fewer tokens** than the equivalent file-walking approach:
+
+| Query | Naive file-walk | MCP context pack | Reduction |
+|---|---:|---:|---:|
+| List every entry point | 14,088 tokens | 1,794 tokens | **7.9×** |
+| One route's full context | 5,647 tokens | 703 tokens | **8.0×** |
+| Impact-of-change for a function | ~20-30 files of grepping | 254 tokens | **~50×** |
+| Diff summary | several KB of git output | 28 tokens | **>200×** |
+
+A 2.7B-class model with a 16K context window can now answer "what handles this route?" or "what breaks if I change X?" on a 1k-file codebase using **one MCP call instead of dozens of file reads.** The retrieval problem moves from the LLM to the framework.
+
+### What's exposed (25 tools)
+
+**Context packs**: `list_entrypoints`, `list_entrypoints_paged`, `get_entrypoint_pack`, `get_feature_pack`, `pre_edit_brief`, `get_function_source`, `trace_call_path`
+**Diff & impact**: `get_diff_summary`, `get_api_surface_diff`, `get_impact_of_change`, `get_impact_analysis`, `get_function_dependencies`
+**Search & query**: `search_workspace` (weighted reverse index), `query_snapshot` (read-only SQL), `describe_snapshot_schema`
+**Health & rules**: `get_health_report`, `list_architecture_violations`, `get_coverage_overlay`
+**Workspace**: `get_workspace_status`, `find_similar_entities`, `list_saved_views`, `compare_workspaces`
+**Interop**: `export_openapi_spec`, `export_function_calling_spec`, `summarise_payload`
+
+Plus five MCP resources: `codeatlas://workspace/{microservices, apis, features, entrypoints, diff-summary}`.
+
+### Quick setup — five clients
+
+The binary lives inside the installed extension at `~/.vscode/extensions/codeatlaslive.codeatlas-live-<version>/dist/mcp-server.js`. Point your client at it with the workspace path as the single argument.
+
+**Claude Code** — `claude mcp add codeatlas -s user -- node ~/.vscode/extensions/codeatlaslive.codeatlas-live-5.0.0/dist/mcp-server.js /absolute/path/to/your/repo` (or edit `~/.claude.json` directly).
+
+**Cursor** — Cursor → Settings → MCP → Add Server:
+```json
+{
+  "mcpServers": {
+    "codeatlas": {
+      "command": "node",
+      "args": [
+        "/Users/<you>/.vscode/extensions/codeatlaslive.codeatlas-live-5.0.0/dist/mcp-server.js",
+        "/absolute/path/to/your/repo"
+      ]
+    }
+  }
+}
+```
+
+**VS Code** (1.103+, with Copilot Chat agent mode) — drop into `.vscode/mcp.json` at the workspace root:
+```json
+{
+  "servers": {
+    "codeatlas": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "${userHome}/.vscode/extensions/codeatlaslive.codeatlas-live-5.0.0/dist/mcp-server.js",
+        "${workspaceFolder}"
+      ]
+    }
+  }
+}
+```
+
+**Codex CLI** — append to `~/.codex/config.toml`:
+```toml
+[mcp_servers.codeatlas]
+command = "node"
+args = [
+  "/Users/<you>/.vscode/extensions/codeatlaslive.codeatlas-live-5.0.0/dist/mcp-server.js",
+  "/absolute/path/to/your/repo",
+]
+```
+
+**Gemini CLI / Antigravity** — `~/.gemini/settings.json` (or `.gemini/settings.json` in the project root):
+```json
+{
+  "mcpServers": {
+    "codeatlas": {
+      "command": "node",
+      "args": [
+        "/Users/<you>/.vscode/extensions/codeatlaslive.codeatlas-live-5.0.0/dist/mcp-server.js",
+        "/absolute/path/to/your/repo"
+      ]
+    }
+  }
+}
+```
+
+After registering, reload your client and the 25 tools appear alongside its built-ins.
+
+### A wrapper for any-workspace use
+
+If you want one config that works in any project (so you don't have to update the workspace path each time), drop this onto your `$PATH`:
+
+```bash
+#!/usr/bin/env bash
+# /usr/local/bin/codeatlas-mcp
+exec node ~/.vscode/extensions/codeatlaslive.codeatlas-live-5.0.0/dist/mcp-server.js "$PWD"
+```
+
+Then your client configs become `command: codeatlas-mcp` with no args — workspace is wherever you launched the client.
+
+### Self-init: no VS Code required
+
+The MCP server bootstraps the snapshot itself when launched against a workspace that has no `.codeatlas/state.db` yet — scans the workspace, classifies it as a codebase (or returns `status: 'not_a_codebase'` for docs-only / empty dirs), runs the full indexing pipeline, and starts a file watcher to keep state current. **You can register the MCP server against a brand-new repo and the LLM gets working answers within seconds — no VS Code launch required.**
+
+### Concurrent VS Code + MCP
+
+When both run on the same workspace, MCP wins write ownership. The extension watches for `.codeatlas/.mcp-preempt`, yields its lock when an MCP process requests it, disables auto-update for the session, and shows a recovery toast. Close+reopen the workspace once the MCP process exits to reclaim writes. No silent races on `state.db`.
+
+---
+
+## Commands
+
+| Command | Description |
+|---------|-------------|
+| Open in Browser | View diagrams at localhost:7742 |
+| Initialize Visuals | Scan workspace and build all diagrams |
+| Re-sync Everything | Full rebuild + reset baseline |
+| Search | Find APIs, files, clusters, services |
+| Show Health Report | Code quality dashboard |
+| Impact Analysis | Blast radius for selected file/function |
+| Compare Commits | Git diff across all layers |
+| Compare Pull Request | PR diff across all layers |
+| Load Test Coverage | Import lcov/Istanbul coverage data |
+| Export Architecture Docs | Markdown + Mermaid export |
+| Copy API Route | Copy `METHOD /route` to clipboard |
+| Toggle Auto Update | Enable/disable live updates |
+
+---
+
+## Settings
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Auto Update on Save | On | Refresh diagrams when you save |
+| Browser Port | 7742 | Port for standalone browser UI (localhost) |
+| Ignore Patterns | node_modules, dist, build | Glob patterns to skip |
+| LSP Fallback | Off | Better type resolution for complex TypeScript |
+| LLM Naming | Off | AI-powered cluster naming via OpenRouter |
+| God File Threshold | 15 | Symbols count to flag large files |
+| High Coupling Threshold | 10 | Cross-file edges to flag tight coupling |
+
+---
+
+## Privacy & Security
+
+- **Your code stays local.** All analysis runs on your machine.
+- **Browser UI is localhost-only.** Server binds to 127.0.0.1 with WebSocket origin validation.
+- **LLM features are opt-in.** Only short snippets are sent, and sensitive values are filtered before transmission.
+- **Sensitive data never persisted.** Passwords, tokens, and connection strings are scrubbed from the state file.
+- **CSP enforced.** Webview uses a nonce-based Content Security Policy.
+- **Atomic writes.** State file is written with a tmp-file-and-rename pattern; a schema-version header lets the extension cleanly rebuild after upgrades.
+
+### Telemetry
+
+CodeAtlas sends anonymous product-usage events so we can understand which features
+are used and debug issues across editors and platforms.
+
+**What we collect:**
+
+- **Lifecycle events** — first install, update, launch (extension version,
+  days-since-install).
+- **Interaction events** — which features are used: AI Review, Ask AI, Timeline
+  Replay, Git Diff, Initialize, Resync, Sign-In.
+- **Editor context** — editor name (e.g. *Visual Studio Code*, *Cursor*, *VSCodium*),
+  uri scheme, distribution channel (Marketplace vs Open VSX), platform, architecture,
+  remote-mode kind (WSL / SSH / dev-container).
+- **Anonymous device ID** — a per-device hash provided by VS Code
+  (`vscode.env.machineId`). Not tied to your real identity unless you sign in.
+- **User account when signed in** — your email and a generated user identifier,
+  only after explicit sign-in. Used to associate device events with your account.
+- **Error and notification events** — feature failures, parse errors, and warning
+  toasts shown.
+
+**What we do NOT collect:**
+
+- Your source code or any file content
+- File names or directory structure
+- Git history, commit messages, branch names, or repository URLs
+- Search queries or natural-language prompts (only their length is recorded)
+- LLM responses or AI Review findings text
+- Any value entered into a password field, API key, or secret
+
+**How to opt out:**
+
+- Stay signed out — events are then attributed only to an anonymous device hash
+  with no email or user identifier attached.
+- Block `api2.amplitude.com` at the firewall (or disable network access for the
+  VS Code extension host) for a complete opt-out.
+
+---
+
 ## Why CodeAtlas?
 
 | Feature | CodeAtlas | Other tools |
